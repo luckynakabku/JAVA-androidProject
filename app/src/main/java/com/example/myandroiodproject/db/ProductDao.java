@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface ProductDao {
 
-    @Query("SELECT * FROM product")
+    @Query("SELECT * FROM products")
     List<Product> getAllProducts();
 
     @Insert

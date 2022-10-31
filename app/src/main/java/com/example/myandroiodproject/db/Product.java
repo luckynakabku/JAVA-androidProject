@@ -1,10 +1,12 @@
 package com.example.myandroiodproject.db;
 
+import android.graphics.Bitmap;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity (tableName = "products")
 public class Product {
     @PrimaryKey(autoGenerate = true)
     public int id;
@@ -14,4 +16,5 @@ public class Product {
 
     @ColumnInfo(name = "product_price")
     public String price;
+
 }
