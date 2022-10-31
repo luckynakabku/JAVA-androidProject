@@ -6,15 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
     }
-
-    public void goToRegister(View view){
-        startActivity(new Intent(MainActivity.this,RegisterActivity.class));
+    public void backToLogin(View view){
+        startActivity(new Intent(RegisterActivity.this,MainActivity.class));
     }
 }
