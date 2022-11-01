@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.myandroiodproject.db.Database;
@@ -24,19 +27,46 @@ public class MainActivity extends AppCompatActivity {
         TextView alert = findViewById(R.id.registerAlertText);
         alert.setVisibility(View.INVISIBLE);
 
-        List<User> userList = getUserListFromDatabase();
+        EditText usernameEditText = findViewById(R.id.usernameLogin);
+        EditText passwordEditText = findViewById(R.id.passwordLogin);
+        Button loginButton = findViewById(R.id.loginSubmitButton);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+                if(username.isEmpty() || password.isEmpty()){
+                    alert.setText("Please fill out all fields.");
+                    alert.setVisibility(View.VISIBLE);
+                }else{
+                    if(checkLogin(username,password)!=null){
+                        Intent intent = new Intent(MainActivity.this,MarketplaceActivity.class);
+                        intent.putExtra("Username",username);
+                        startActivity(intent);
+                    }else{
+                        alert.setText("Username or Password is Wrong!");
+                        alert.setVisibility(View.VISIBLE);
+                        passwordEditText.setText("");
+                    }
+                }
+            }
+        });
     }
 
     public void goToRegister(View view){
         startActivity(new Intent(MainActivity.this,RegisterActivity.class));
     }
 
-    public List<User> getUserListFromDatabase(){
+    public User checkLogin(String username,String password){
         Database database = Database.getDbInstance(this.getApplicationContext());
-
-        UserDao userDao = database.userDao();
-        List<User> userList = userDao.getAllUser();
-
-        return userList;
+        List<User> userList = database.userDao().checkLogin(username,password);
+        if(userList.isEmpty()){
+            return null;
+        }else{
+            return userList.get(0);
+        }
     }
+
 }
