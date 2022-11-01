@@ -15,8 +15,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_bg1"
-        android:text="Back"
         android:onClick="backToLogin"
+        android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,11 +145,13 @@
         android:id="@+id/registerAlertText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
         android:layout_marginBottom="8dp"
         android:text="AlertText"
+        android:textAlignment="center"
         android:textColor="#e51c23"
         app:layout_constraintBottom_toTopOf="@+id/registerSubmitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

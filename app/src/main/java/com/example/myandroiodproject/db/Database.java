@@ -13,11 +13,11 @@ public abstract class Database extends RoomDatabase {
 
     public abstract UserDao userDao();
 
-    private  static Database INSTANCE;
+    private static Database INSTANCE;
 
     public static Database getDbInstance(Context context){
         if(INSTANCE == null){
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), Database.class,"DATA").allowMainThreadQueries().build();
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), Database.class,"database").allowMainThreadQueries().build();
         }
         return INSTANCE;
     }

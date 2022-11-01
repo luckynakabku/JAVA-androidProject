@@ -12,6 +12,9 @@ public interface UserDao {
     @Query("SELECT * FROM users")
     List<User> getAllUser();
 
+    @Query(("SELECT * FROM users WHERE user_username == :username "))
+    List<User> checkUsernameExist(String username);
+
     @Insert
     void insertUser(User... users);
 
