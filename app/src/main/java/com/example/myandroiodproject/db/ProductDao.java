@@ -13,6 +13,9 @@ public interface ProductDao {
     @Query("SELECT * FROM products")
     List<Product> getAllProducts();
 
+    @Query("SELECT * FROM products WHERE id == :id ")
+    List<Product> getProductByID(int id);
+
     @Insert
     void insertProduct(Product... products);
 

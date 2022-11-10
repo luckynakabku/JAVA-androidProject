@@ -1,7 +1,5 @@
 package com.example.myandroiodproject.db;
 
-import android.graphics.Bitmap;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -14,7 +12,13 @@ public class Product {
     @ColumnInfo(name = "product_name")
     public String name;
 
+    @ColumnInfo(name = "product_detail")
+    public String detail;
+
     @ColumnInfo(name = "product_price")
-    public String price;
+    public Double price;
+
+    @ColumnInfo(name = "product_image")
+    public String image;
 
 }

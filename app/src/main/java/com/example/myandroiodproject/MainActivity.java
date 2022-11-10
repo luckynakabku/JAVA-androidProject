@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myandroiodproject.db.Database;
 import com.example.myandroiodproject.db.User;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String password = passwordEditText.getText().toString();
 
                 if(username.isEmpty() || password.isEmpty()){
-                    alert.setText("Please fill out all fields.");
+                    alert.setText("กรูณากรอกข้อมูลไม่ถูกต้อง");
                     alert.setVisibility(View.VISIBLE);
                 }else{
                     if(checkLogin(username,password)!=null){
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("Username",username);
                         startActivity(intent);
                     }else{
-                        alert.setText("Username or Password is Wrong!");
+                        alert.setText("Username หรือ Password ผิด!");
                         alert.setVisibility(View.VISIBLE);
                         passwordEditText.setText("");
                     }

@@ -42,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String confirmPassword = confirmPasswordEditText.getText().toString();
 
                 if(username.isEmpty() || name.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
-                    alert.setText("Please fill out all fields.");
+                    alert.setText("กรุณาใส่ข้อมูลให้ครบถ้วน");
                     alert.setTextColor(Color.parseColor("#e51c23"));
                     alert.setVisibility(View.VISIBLE);
                 }else{
                     if(!password.equals(confirmPassword)){
-                        alert.setText("Confirm Password Incorrect.");
+                        alert.setText("ยืนยันรหัสผ่านไม่ถูกต้อง");
                         alert.setTextColor(Color.parseColor("#e51c23"));
                         alert.setVisibility(View.VISIBLE);
                     }else {
@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                             user.password = password;
                             user.balance = 0.0;
                             addUserToDatabase(user);
-                            alert.setText("Register success.");
+                            alert.setText("สมัครสมาชิกสำเร็จ");
                             alert.setTextColor(Color.parseColor("#00FF66"));
                             alert.setVisibility(View.VISIBLE);
                             usernameEditText.setText("");
@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                             confirmPasswordEditText.setText("");
 
                         }else{
-                            alert.setText("Username already taken!");
+                            alert.setText("Username นี้มีคนใช้แล้ว");
                             alert.setTextColor(Color.parseColor("#e51c23"));
                             alert.setVisibility(View.VISIBLE);
                         }

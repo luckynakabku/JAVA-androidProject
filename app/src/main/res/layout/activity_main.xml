@@ -20,17 +20,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/forgetPWButton"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/btn_bg1"
-        android:text="Forgot Password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginSubmitButton" />
-
-    <Button
         android:id="@+id/loginSubmitButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
@@ -101,20 +90,21 @@
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/registerBackButton"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_bg1"
         android:onClick="goToRegister"
         android:text="Register"
-        app:layout_constraintStart_toEndOf="@+id/forgetPWButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginSubmitButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
