@@ -58,10 +58,10 @@ public class MarketplaceActivity extends AppCompatActivity implements PopupMenu.
             @Override
             public void onClick(View view) {
                 Product product = new Product();
-                product.name = "dog";
-                product.detail = "หมาน้อย";
-                product.price = 2000.0;
-                product.image = "dog";
+                product.name = "เหรียญหลวงพ่อรวย";
+                product.detail = "หลวงพ่อรวย เหรียญหลวงพ่อรวย เลื่อนสมณศักดิ์ อยุธยา";
+                product.price = 100.0;
+                product.image = "amulet_5";
                 Database database = Database.getDbInstance(getApplicationContext());
                 database.productDao().insertProduct(product);
             }
