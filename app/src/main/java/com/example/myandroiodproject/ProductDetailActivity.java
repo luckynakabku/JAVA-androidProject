@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myandroiodproject.db.Database;
+import com.example.myandroiodproject.db.History;
 import com.example.myandroiodproject.db.Product;
 import com.example.myandroiodproject.db.User;
 
 import org.w3c.dom.Text;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class ProductDetailActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
@@ -27,7 +31,7 @@ public class ProductDetailActivity extends AppCompatActivity implements PopupMen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
         Product product = checkProduct(productAdapter.selectedProduct);
 
         User user = checkUsername(MarketplaceActivity.loginUsername);
@@ -56,6 +60,19 @@ public class ProductDetailActivity extends AppCompatActivity implements PopupMen
         }else{
             alert.setVisibility(View.INVISIBLE);
         }
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                user.balance -= product.price;
+                updateUserToDatabase(user);
+
+                Intent newIntent = new Intent(ProductDetailActivity.this,MarketplaceActivity.class);
+                newIntent.putExtra("Username",MarketplaceActivity.loginUsername);
+                startActivity(newIntent);
+                Toast.makeText(getApplicationContext(),"ซื้อสำเร็จ",Toast.LENGTH_SHORT).show();
+                addHistory();
+            }
+        });
 
         String imagePath = product.image.replace("R.drawable.","");
         int drawable = getResources().getIdentifier(imagePath,"drawable",getOpPackageName());
@@ -94,6 +111,19 @@ public class ProductDetailActivity extends AppCompatActivity implements PopupMen
             return userList.get(0);
         }
     }
+
+    public void addHistory(){
+        Database database = Database.getDbInstance(this.getApplicationContext());
+        Product product = checkProduct(productAdapter.selectedProduct);
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss");
+        String dateTime = localDateTime.format(dateTimeFormatter);
+        History history = new History();
+        history.customerUsername = MarketplaceActivity.loginUsername;
+        history.productName = product.name;
+        history.date = dateTime;
+        database.historyDao().insertHistory(history);
+    }
     public void showPopup(View v){
         PopupMenu popup = new PopupMenu(this,v);
         popup.setOnMenuItemClickListener(this);
@@ -119,5 +149,9 @@ public class ProductDetailActivity extends AppCompatActivity implements PopupMen
             default:
                 return false;
         }
+    }
+    public void updateUserToDatabase(User user){
+        Database database = Database.getDbInstance(this.getApplicationContext());
+        database.userDao().updateUser(user);
     }
 }

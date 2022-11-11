@@ -24,32 +24,32 @@
         android:id="@+id/buyCoin10"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="366dp"
         android:background="@drawable/btn_bg1"
 
         android:text="Buy"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/coin10"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/coin100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="75dp"
         android:text="100 Coins"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/coin10" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/coin10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginTop="370dp"
         android:text="10 Coins"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -60,61 +60,60 @@
         android:id="@+id/buyCoin100"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/btn_bg1"
 
         android:text="Buy"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/coin100"
+        app:layout_constraintTop_toTopOf="@id/buyCoin10" />
 
     <Button
         android:id="@+id/buyCoin500"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="492dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/btn_bg1"
 
         android:text="Buy"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/coin500"
+        app:layout_constraintTop_toTopOf="@id/buyCoin100" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/coin500"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="75dp"
         android:text="500 Coins"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/coin100" />
+
+    <TextView
+        android:id="@+id/Coin1000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="75dp"
+        android:text="1000 Coins"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/coin500" />
 
     <Button
         android:id="@+id/buyCoin1000"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/btn_bg1"
-
         android:text="Buy"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="556dp"
-        android:text="1000 Coins"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Coin1000"
+        app:layout_constraintTop_toTopOf="@id/buyCoin500" />
 
     <include
         android:id="@+id/include"
@@ -156,5 +155,49 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/price10coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="122dp"
+        android:text="30 Baht"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coin10" />
+
+    <TextView
+        android:id="@+id/price100coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="119dp"
+        android:text="300 Baht"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coin100" />
+
+    <TextView
+        android:id="@+id/price500coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="116dp"
+        android:text="1500 Baht"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coin500" />
+
+    <TextView
+        android:id="@+id/price1000coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="115dp"
+        android:text="3000 Baht"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Coin1000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

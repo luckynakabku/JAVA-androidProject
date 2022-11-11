@@ -6,12 +6,14 @@ import android.content.Context;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@androidx.room.Database(entities = {Product.class , User.class}, version = 1)
+@androidx.room.Database(entities = {Product.class , User.class , History.class}, version = 1)
 public abstract class Database extends RoomDatabase {
 
     public abstract ProductDao productDao();
 
     public abstract UserDao userDao();
+
+    public abstract HistoryDao historyDao();
 
     private static Database INSTANCE;
 

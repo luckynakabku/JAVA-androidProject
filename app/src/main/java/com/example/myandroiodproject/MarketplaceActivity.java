@@ -26,8 +26,8 @@ import java.util.List;
 public class MarketplaceActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     public static String loginUsername;
-
     private productAdapter productAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +59,8 @@ public class MarketplaceActivity extends AppCompatActivity implements PopupMenu.
             public void onClick(View view) {
                 Product product = new Product();
                 product.name = "dog";
-                product.detail = "หมาหมาหมา";
-                product.price = 3000.0;
+                product.detail = "หมาน้อย";
+                product.price = 2000.0;
                 product.image = "dog";
                 Database database = Database.getDbInstance(getApplicationContext());
                 database.productDao().insertProduct(product);
@@ -111,7 +111,8 @@ public class MarketplaceActivity extends AppCompatActivity implements PopupMenu.
                 startActivity(addCoinIntent);
                 return true;
             case R.id.history:
-                Toast.makeText(this,"History",Toast.LENGTH_SHORT).show();
+                Intent historyIntent = new Intent(MarketplaceActivity.this,HistoryActivity.class);
+                startActivity(historyIntent);
                 return true;
             case R.id.logOut:
                 Toast.makeText(this,"ออกจากระบบเรียบร้อย",Toast.LENGTH_SHORT).show();

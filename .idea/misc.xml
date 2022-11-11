@@ -7,10 +7,12 @@
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.268" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.268" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/activity_add_coin.xml" value="0.36666666666666664" />
+        <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/activity_history.xml" value="0.33" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/activity_marketplace.xml" value="0.33" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/activity_product_detail.xml" value="0.36666666666666664" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/activity_register.xml" value="0.21105072463768115" />
+        <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/history_view.xml" value="0.365625" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/market_view.xml" value="0.36666666666666664" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/layout/toolbar.xml" value="0.33" />
         <entry key="..\:/android/JAVA-androidProject/app/src/main/res/menu/menu_item.xml" value="0.36666666666666664" />
