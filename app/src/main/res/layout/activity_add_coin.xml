@@ -8,7 +8,21 @@
     tools:context=".AddCoinActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/waitingText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="ระบบกำลังทำการซื้อเหรียญผ่าน Smart Contact         กรุณารอสักครู่..."
+        android:textAlignment="center"
+        android:textColor="#F44336"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <TextView
+        android:id="@+id/choiceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="308dp"
@@ -160,10 +174,10 @@
         android:id="@+id/price10coin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
-        android:layout_marginTop="1dp"
         android:layout_marginStart="122dp"
+        android:layout_marginTop="1dp"
         android:text="30 Baht"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coin10" />
 
@@ -171,10 +185,10 @@
         android:id="@+id/price100coin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
-        android:layout_marginTop="1dp"
         android:layout_marginStart="119dp"
+        android:layout_marginTop="1dp"
         android:text="300 Baht"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coin100" />
 
@@ -182,10 +196,10 @@
         android:id="@+id/price500coin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
-        android:layout_marginTop="1dp"
         android:layout_marginStart="116dp"
+        android:layout_marginTop="1dp"
         android:text="1500 Baht"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coin500" />
 
@@ -193,10 +207,10 @@
         android:id="@+id/price1000coin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
-        android:layout_marginTop="1dp"
         android:layout_marginStart="115dp"
+        android:layout_marginTop="1dp"
         android:text="3000 Baht"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Coin1000" />
 
